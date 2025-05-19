@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # RF12 Gerenciar Cidades
 class Cidade(models.Model):
     nome = models.CharField(max_length=100, verbose_name="Nome da cidade")
@@ -211,3 +212,4 @@ class AvaliacaoTipo(models.Model):
     class Meta:
         verbose_name = "Tipo de Avaliação"
         verbose_name_plural = "Tipos de Avaliação"
+

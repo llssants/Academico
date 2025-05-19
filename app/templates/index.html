@@ -63,10 +63,10 @@
                     <a class="nav-link text-dark" href="/ocorrencia/">Ocorrências</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/cursoDisciplina/">Curso-Disciplina</a>
+                    <a class="nav-link text-dark" href="/cursodisciplina/">Curso-Disciplina</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/avaliacaoTipo/">Tipos de Avaliação</a>
+                    <a class="nav-link text-dark" href="/avaliacaotipo/">Tipos de Avaliação</a>
                 </li>
             </ul>
         </div>
@@ -93,26 +93,21 @@
                     <th>Email</th>
                     <th>Cidade</th>
                     <th>Ocupação</th>
-                    <th>Editar</th>
+                    <!-- <th>Editar</th> -->
                     <th>Excluir</th>
                 </tr>
             </thead>
             <tbody>
                 {% for pessoa in pessoas %}
-                    <tr>
-                        <td>{{ pessoa.nome }}</td>
-                        <td>{{ pessoa.cpf }}</td>
-                        <td>{{ pessoa.data_nasc }}</td>
-                        <td>{{ pessoa.email }}</td>
-                        <td>{{ pessoa.cidade.nome }}</td>
-                        <td>{{ pessoa.ocupacao.nome }}</td>
-                        <td>
-                            <a href="{% url 'editar_pessoa' pessoa.id %}" class="btn btn-warning">Editar</a>
-                        </td>
-                        <td>
-                            <a href="{% url 'deletar_pessoa' pessoa.id %}" class="btn btn-danger">Excluir</a>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>{{ pessoa.nome }}</td>
+                    <td>{{ pessoa.cpf }}</td>
+                    <td>{{ pessoa.data_nasc }}</td>
+                    <td>{{ pessoa.email }}</td>
+                    <td>{{ pessoa.cidade.nome }}</td>
+                    <td>{{ pessoa.ocupacao.nome }}</td>
+                    <td><a href="delete/{{ pessoa.id }}"class="btn btn-danger">Excluir</a></td>               
+                </tr>
                 {% endfor %}
             </tbody>
         </table>
